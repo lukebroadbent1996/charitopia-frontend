@@ -1,0 +1,139 @@
+.container-log {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 45vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1em;
+  margin-top: 9em;
+  margin-left: 9em;
+  padding: .5em 8em;
+  align-items: center;
+  color: var(--text-color);
+}
+
+.container-log > h1 {
+  font-size: 3em;
+  margin-bottom: calc(50% / 2);
+}
+
+.container-form-log {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width: 100%;
+  align-items: center;
+}
+
+.bar-log {
+  height: 2em;
+  width: 60%;
+  font-size: 1.3em;
+  padding: .5em;
+  background-color: rgba(0, 0, 0, 0.445);
+  color: var(--text-color);
+  border: none;
+  border-radius: 1em;
+  margin-top: auto;
+}
+
+.bar-log:focus {
+  outline: none;
+  border-radius: 1em;
+  border: 2px solid rgb(134, 134, 134);
+}
+
+.password-error {
+  position: absolute;
+  right: 4em; 
+  bottom: 12em;
+}
+
+.form-button-log {
+  width: 6em;
+  font-size: 1.2em;
+  padding: .3em;
+  border: none;
+  border-radius: 1em;
+  background-color: rgba(0, 0, 0, 0.445);
+  color: var(--text-color);
+}
+
+.form-button-log:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 0 1pt rgb(202, 202, 202);
+  border-radius: 1em;
+}
+
+.link-text:link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.link-text:visited {
+  text-decoration: none !important;
+  color: var(--text-color);
+}
+
+.link-text:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1553px) {
+  .bar-log {
+    font-size: 1em;
+  }
+
+  .container-log {
+    padding: 0em 0em;
+  }
+}
+
+@media only screen and (max-width: 813px) {
+  .container-log > h1 {
+    font-size: 2em;
+    margin-bottom: 40%;
+  }
+
+  .container-log {
+    width: 60vw;
+    padding: 0em 0em;
+    margin: 0em;
+    margin: 4.5em;
+    place-self: center;
+  }
+
+  .bar-log {
+    width: 80%;
+    font-size: .7em;
+  }
+
+  .form-button-log {
+    font-size: .9em;
+  }
+
+  .container-log > p {
+    font-size: 0.65em;
+  }
+
+  .link-text:link {
+    text-decoration: underline;
+  }
+}
+
+@media only screen and (max-width: 813px) and (max-height: 850px) {
+  .container-log h1 {
+    margin-bottom: 20%;
+  }
+}
+
+@media only screen and (max-height: 420px) {
+  .container-form-log {
+    height: 100%;
+    gap: 0em;
+  }
+
+  .container-log h1 {
+    margin-bottom: 0em;
+  }
+}

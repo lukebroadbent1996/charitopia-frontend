@@ -1,0 +1,35 @@
+#account_page_background {
+    margin-top: 5em;
+    margin-left: 40em;
+    position: fixed;
+    height: 25vh;
+    width: 30%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#account_page_background > h1 {
+    color: var(--text-color);
+}
+
+.account_text {
+    margin: auto;
+    font-size: 1.5em;
+    color: var(--text-color);
+}
+
+.logout-button {
+    width: 6em;
+    font-size: 1.2em;
+    padding: .3em;
+    border: none;
+    border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0.445);
+    color: var(--text-color);
+  }
+
+.logout-button:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 0 1pt rgb(202, 202, 202);
+    border-radius: 1em;
+}

@@ -1,0 +1,54 @@
+:root {
+  --text-color: white;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  position: absolute;
+  height: 9vh;
+  width: 100%;
+  padding-right: 2em;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.801) 20%, rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.219), rgba(0, 0, 0, 0)); */
+  background-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.8) 100%);
+  justify-content: flex-end;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+}
+
+.navbar-item {
+  color: var(--text-color);
+}
+
+.navbar-item:link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.navbar-item:visited {
+  text-decoration: none !important;
+  color: var(--text-color);
+}
+
+.navbar-item:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 800px) {
+  .navbar {
+    padding: 0em .5em;
+  }
+
+  .navbar ul {
+    gap: .5em;
+  }
+}
