@@ -9,15 +9,13 @@ const Card = styled.div`
   background-size: cover;
 `
 
-const KEY = "6Fl9v7VsHxRVVHl22wphy2-O8Nwv6bCpm-TryVnP6dw";
-
 const Results = ({ user, data, searched }) => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
     const getImages = async () => {
       const query = searched;
-      const response = await Axios(`https://api.unsplash.com/search/photos?query=${query}&client_id=${KEY}`);
+      const response = await Axios(`https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.KEY}`);
       setImages(response.data.results);
     }
 
