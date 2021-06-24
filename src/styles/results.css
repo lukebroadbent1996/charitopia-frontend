@@ -69,8 +69,19 @@
   margin-top: 0;
 }
 
+.search-container {
+  position: relative;
+}
+
 .search-button {
+  position: absolute;
+  top: 5rem;
+  left: 52rem;
   background: none;
   background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  font-size: 2em;
+  border-radius: .5em;
   color: var(--text-color);
+  cursor: pointer;
 }
