@@ -30,7 +30,7 @@ const Homepage = ({ setData, data, setSearched }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/api", { "search": input });
+      const response = await axios.post(`${process.env.REACT_APP_DB}/api`, { "search": input });
       setData(await response.data);
       setSearched(input);
     } catch (error) {

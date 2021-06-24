@@ -19,7 +19,7 @@ const Login = ({ setUser }) => {
 		setError("");
 
 		try {
-			const response = await Axios.post("http://localhost:3001/login", submitted);
+			const response = await Axios.post(`${process.env.REACT_APP_DB}/login`, submitted);
 			setUser(response.data.user);
 			setRedirect(true);
 		} catch (error) {
@@ -37,7 +37,7 @@ const Login = ({ setUser }) => {
 
   //check user is logged in from previous sessions
   useEffect( async () => {
-    const response = await Axios.get("http://localhost:3001/login");
+    const response = await Axios.get(`${process.env.REACT_APP_DB}/login`);
 
 		if (response.data.loggedIn === true ) {
       setLoginStatus(response.data.user[0].name);

@@ -22,7 +22,7 @@ const Register = () => {
     Axios.defaults.withCredentials = true;
 
     try {
-      const response = await Axios.post("http://localhost:3001/register", submitted);
+      const response = await Axios.post(`${process.env.REACT_APP_DB}/register`, submitted);
 
       setNameInput("");
       setEmailInput("");
