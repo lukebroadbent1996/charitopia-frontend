@@ -43,6 +43,13 @@
   text-decoration: underline;
 }
 
+.tech-tip {
+  opacity: 100%;
+  position: absolute;
+  left: 30vw;
+  top: 20vh;
+}
+
 @media only screen and (max-width: 800px) {
   .navbar {
     padding: 0em .5em;
