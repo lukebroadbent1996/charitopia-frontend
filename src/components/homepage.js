@@ -38,18 +38,6 @@ const Homepage = ({ setData, data, setSearched }) => {
     }
   }
 
-  const handleOnKeyPress = (e) => {
-    console.log()
-    if (e.keyCode = 38 && navNumber > 0) {
-      setNavNumber(navNumber - 1);
-    } else if (e.keyCode === 40 && navNumber < animals
-      .filter((search) => search.toLowerCase().search(input.toLowerCase()) > -1).length - 1) {
-      setNavNumber(navNumber + 1);
-    }
-  }
-
-  console.log(navNumber);
-
   if (data[0]) return <Redirect to="/search" />
 
   return (
@@ -62,17 +50,14 @@ const Homepage = ({ setData, data, setSearched }) => {
             placeholder="search"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            onClick={() => setDisplay(!display)}
-            onKeyPress={
-              handleOnKeyPress
-            } />
+            onClick={() => setDisplay(!display)} />
           {display && (
             <div className="auto-container" ref={wrapperRef}>
               {animals
                 .filter((search) => search.toLowerCase().search(input.toLowerCase()) > -1)
                 .map((item, index) => {
                   return (
-                    <div className={navNumber === index ? "active" : "option"}
+                    <div className="option"
                       key={index}
                       tabIndex="0"
                       onClick={() => { setInput(item); setDisplay(false); }}
