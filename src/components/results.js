@@ -14,24 +14,14 @@ const Card = styled.div`
   background-size: cover;
 `
 
-<<<<<<< HEAD
-
-
-const Results = ({ user, data, searched }) => {
-=======
 const Results = ({ user, data, searched, setData, setSearched }) => {
->>>>>>> 548648974148a26e291833c82af2f43051f232c1
   const [images, setImages] = useState([]);
   const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
     const getImages = async () => {
       const query = searched;
-<<<<<<< HEAD
-      const response = await Axios(`https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.KEY}`);
-=======
       const response = await Axios(`https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.REACT_APP_KEY}`);
->>>>>>> 548648974148a26e291833c82af2f43051f232c1
       setImages(response.data.results);
     }
 
