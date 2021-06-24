@@ -33,7 +33,8 @@ const Results = ({ user, data, searched, setData, setSearched }) => {
   const handleButton = () => {
     setData([]);
     setSearched("");
-    setRedirect(true)
+    setImages([]);
+    setRedirect(true);
   }
 
   if (redirect) return <Redirect to="/"/>
