@@ -22,7 +22,7 @@ const Results = ({ user, data, searched, setData, setSearched }) => {
     const getImages = async () => {
       const query = searched;
       const response = await Axios.get(`https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.REACT_APP_KEY}`, {
-        credentials: true
+        credentials: 'include'
       });
       setImages(response.data.results);
     }
