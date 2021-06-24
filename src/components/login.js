@@ -20,7 +20,7 @@ const Login = ({ setUser }) => {
 
 		try {
 			const response = await Axios.post("http://localhost:3001/login", submitted);
-			setUser(response.data[0]);
+			setUser(response.data.user);
 			setRedirect(true);
 		} catch (error) {
 			setError(error);

@@ -96,10 +96,11 @@ const App = () => {
               <Register />
             </Route>
             <Route path="/search">
-              <Results user={user} data={data} searched={searched} />
+              <Results user={user} data={data} searched={searched} setData={setData} setSearched={setSearched} />
             </Route>
             <Route path="/">
               <Homepage setData={setData} data={data} setSearched={setSearched} />
+              {/* {randomImg === "tree.jpg" ? <button className="tech-tip"><img src="/static/media/linus.e10aba8d.jpg" height="50px"/></button> : null} */}
             </Route>
           </Switch>
         </Router>
