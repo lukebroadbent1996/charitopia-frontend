@@ -21,7 +21,9 @@ const Results = ({ user, data, searched, setData, setSearched }) => {
   useEffect(() => {
     const getImages = async () => {
       const query = searched;
-      const response = await Axios(`https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.REACT_APP_KEY}`);
+      const response = await Axios.get(`https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.REACT_APP_KEY}`, {
+        credentials: true
+      });
       setImages(response.data.results);
     }
 
