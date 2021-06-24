@@ -39,7 +39,8 @@ const Results = ({ user, data, searched, setData, setSearched }) => {
   if (redirect) return <Redirect to="/"/>
 
   return (
-    <>
+    <div className="search-container">
+      <button className="search-button" type="button" onClick={handleButton}>Search again?</button>
       <div className="container-results">
         {data.length > 0 && images.length > 0 ? data.map((item, index) => {
           return (
@@ -55,8 +56,7 @@ const Results = ({ user, data, searched, setData, setSearched }) => {
           )
         }) : <h1>Loading...</h1>}
       </div>
-      <button className="search-button" type="button" onClick={handleButton}>Search again?</button>
-    </>
+    </div>
   )
 }
 

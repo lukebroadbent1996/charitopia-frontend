@@ -9,6 +9,7 @@ import { Redirect } from "react-router-dom";
 const Homepage = ({ setData, data, setSearched }) => {
   const [input, setInput] = useState("");
   const [display, setDisplay] = useState(false);
+  const [navNumber, setNavNumber] = useState(0);
 
   const wrapperRef = useRef(null);
 
@@ -37,40 +38,45 @@ const Homepage = ({ setData, data, setSearched }) => {
     }
   }
 
-  if (data[0]) return <Redirect to="/search"/>
+  if (data[0]) return <Redirect to="/search" />
 
   return (
     <div className="container-homepage">
       <form onSubmit={handleSubmit} autoComplete="off">
         <div className="pos-rel">
           <input className="search-bar"
-          type="text"
-          name='search'
-          placeholder="search"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onClick={() => setDisplay(!display)} />
+            type="text"
+            name='search'
+            placeholder="search"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onClick={() => setDisplay(!display)} />
           {display && (
             <div className="auto-container" ref={wrapperRef}>
               {animals
-              .filter((search) => search.toLowerCase().search(input.toLowerCase()) > -1)
-              .map((item, index) => {
-                return (
-                  <div className="option" 
-                  key={index} 
-                  tabIndex="0" 
-                  onClick={() => { setInput(item); setDisplay(false); }}
-                  onKeyPress={(e) => { if (e.key === "Enter") { setInput(item); setDisplay(false); }}}>
-                    <p>{item}</p>
-                  </div>
-                )
-              })}
+                .filter((search) => search.toLowerCase().search(input.toLowerCase()) > -1)
+                .map((item, index) => {
+                  return (
+                    <div className="option"
+                      key={index}
+                      tabIndex="0"
+                      onClick={() => { setInput(item); setDisplay(false); }}
+                      onKeyPress={(e) => {
+                        if (e.key === "Enter") {
+                          setInput(item);
+                          setDisplay(false);
+                        }
+                      }}>
+                      <p>{item}</p>
+                    </div>
+                  )
+                })}
             </div>
           )}
           <button type="submit" className="submit-button"><SearchSymbol color="rgb(134, 134, 134)" size="3em" /></button>
         </div>
       </form>
-      
+
     </div>
   )
 }
