@@ -9,10 +9,68 @@
   color: var(--text-color);
 }
 
+.card-background {
+  min-height: 30vh;
+  max-height: 40vh;
+  width: 25vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: .5vw;
+  border-radius: 1em;
+  place-self: center;
+}
+
 .card-content {
   display: flex;
   flex-direction: column;
+  min-height: 29vh;
+  max-height: 39vh;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1em;
   padding: 1em;
+}
+
+.card {
+  cursor: pointer;
+  font-size: .85em;
+  transition: transform 500ms ease;
+  overflow: hidden;
+  border-radius: 1em;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: scale(1.02);
+}
+
+.card:hover .card-content,
+.card:focus-within .card-content {
+  transform: translateY(35%);
+}
+
+.card-content {
+  transform: translateY(74%);
+  
+  transition: transform 500ms ease;
+}
+
+.card-content *:not(.card-content h2) {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+  transition-delay: 400ms;
+}
+
+.card:hover .card-content *:not(.card-content h2),
+.card:focus-within .card-content *:not(.card-content h2) {
+  opacity: 1;
+}
+
+.card-header {
+  margin-top: 0;
+}
+
+.search-button {
+  background: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--text-color);
 }

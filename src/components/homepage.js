@@ -29,7 +29,7 @@ const Homepage = ({ setData, data, setSearched }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/api", { "search": input});
+      const response = await axios.post("http://localhost:3001/api", { "search": input });
       setData(await response.data);
       setSearched(input);
     } catch (error) {
@@ -70,6 +70,7 @@ const Homepage = ({ setData, data, setSearched }) => {
           <button type="submit" className="submit-button"><SearchSymbol color="rgb(134, 134, 134)" size="3em" /></button>
         </div>
       </form>
+      
     </div>
   )
 }
