@@ -13,6 +13,8 @@ const Register = () => {
 	const [error, setError] = useState("");
 	const [passwordError, setPasswordError] = useState("");
 
+  Axios.defaults.withCredentials = true
+
 	const handleSubmit = async (event) => {
 		event.preventDefault();
     setError("");

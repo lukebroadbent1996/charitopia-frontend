@@ -11,6 +11,8 @@ const Login = ({ setUser }) => {
 	const [redirect, setRedirect] = useState(false);
 
 	const[loginStatus, setLoginStatus] = useState("")
+	
+	Axios.defaults.withCredentials = true
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();

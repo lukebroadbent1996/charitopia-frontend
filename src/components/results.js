@@ -18,6 +18,8 @@ const Results = ({ user, data, searched, setData, setSearched }) => {
   const [images, setImages] = useState([]);
   const [redirect, setRedirect] = useState(false);
 
+ 
+
   useEffect(() => {
     const getImages = async () => {
       const query = searched;
@@ -33,15 +35,13 @@ const Results = ({ user, data, searched, setData, setSearched }) => {
   const handleButton = () => {
     setData([]);
     setSearched("");
-    setImages([]);
-    setRedirect(true);
+    setRedirect(true)
   }
 
   if (redirect) return <Redirect to="/"/>
 
   return (
-    <div className="search-container">
-      <button className="search-button" type="button" onClick={handleButton}>Search again?</button>
+    <>
       <div className="container-results">
         {data.length > 0 && images.length > 0 ? data.map((item, index) => {
           return (
@@ -57,7 +57,8 @@ const Results = ({ user, data, searched, setData, setSearched }) => {
           )
         }) : <h1>Loading...</h1>}
       </div>
-    </div>
+      <button className="search-button" type="button" onClick={handleButton}>Search again?</button>
+    </>
   )
 }
 
