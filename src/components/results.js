@@ -18,6 +18,8 @@ const Results = ({ user, data, searched, setData, setSearched }) => {
   const [images, setImages] = useState([]);
   const [redirect, setRedirect] = useState(false);
 
+  Axios.defaults.withCredentials = true;
+
   useEffect(() => {
     const getImages = async () => {
       const query = searched;

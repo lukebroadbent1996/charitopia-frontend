@@ -34,7 +34,8 @@ const App = () => {
       r.keys().forEach((keys) => { images[keys.replace("./", "")] = r(keys) });
       return images;
     }
-    //require.context is from webpack. It allows you to search from folders that are publically avaible with regEx to filter.
+    //require.context is from webpack. It allows you to search from folders 
+    //that are publically avaible with regEx to filter.
     const images = importAll(require.context("./images/", false, /\.jpg$/));
     const imgArr = Object.keys(images);
 
